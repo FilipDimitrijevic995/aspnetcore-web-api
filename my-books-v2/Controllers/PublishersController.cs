@@ -13,31 +13,45 @@ namespace my_books_v2.Controllers
     [ApiController]
     public class PublishersController : ControllerBase
     {
-        private PublisherService _publisherService;
+        private PublisherService _publishersService;
 
         public PublishersController(PublisherService publisherService)
         {
-            _publisherService = publisherService;
+            _publishersService = publisherService;
         }
 
         [HttpPost("add-publisher")]
         public IActionResult AddPublisher([FromBody] PublisherVM publisher)
         {
-            _publisherService.AddPublisher(publisher);
+            _publishersService.AddPublisher(publisher);
             return Ok();
+        }
+
+        [HttpGet("get-all-publishers")]
+        public IActionResult GetAllPublishers()
+        {
+            try
+            {
+                var _result = _publishersService.GetAllPublishers();
+                return Ok(_result);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Sorry, we could not load the publishers");
+            }
         }
 
         [HttpGet("get-publisher-books-with-authors/{id}")]
         public IActionResult GetPublisherData(int id)
         {
-            var _response = _publisherService.GetPublisherData(id);
+            var _response = _publishersService.GetPublisherData(id);
             return Ok(_response);
         }
 
         [HttpDelete("delete-publisher-by-id/{id}")]
         public IActionResult DeletePublisherById(int id)
         {
-            _publisherService.DeletePublisherById(id);
+            _publishersService.DeletePublisherById(id);
             return Ok();
         }
     }

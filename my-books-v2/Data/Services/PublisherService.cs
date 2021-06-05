@@ -15,6 +15,8 @@ namespace my_books_v2.Data.Services
             _context = context;
         }
 
+        public List<Publisher> GetAllPublishers() => _context.Publishers.ToList();
+
         public void AddPublisher(PublisherVM publisher)
         {
             var _publisher = new Publisher()
