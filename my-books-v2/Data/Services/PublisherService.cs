@@ -54,6 +54,8 @@ namespace my_books_v2.Data.Services
             _context.SaveChanges();
         }
 
+        public Publisher GetPublisherById(int id) => _context.Publishers.FirstOrDefault(n => n.Id == id);
+
         public PublisherWithBooksAndAuthorsVM GetPublisherData(int publisherId)
         {
             var _publisherData = _context.Publishers.Where(n => n.Id == publisherId)
