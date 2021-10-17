@@ -11,7 +11,6 @@ C:\Users\Filip\source\repos\my-books-v2\my-books-v2\bin\Debug\net5.0\Microsoft.O
 C:\Users\Filip\source\repos\my-books-v2\my-books-v2\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Filip\source\repos\my-books-v2\my-books-v2\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Filip\source\repos\my-books-v2\my-books-v2\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Filip\source\repos\my-books-v2\my-books-v2\obj\Debug\net5.0\my-books-v2.csprojAssemblyReference.cache
 C:\Users\Filip\source\repos\my-books-v2\my-books-v2\obj\Debug\net5.0\my-books-v2.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Filip\source\repos\my-books-v2\my-books-v2\obj\Debug\net5.0\my-books-v2.AssemblyInfoInputs.cache
 C:\Users\Filip\source\repos\my-books-v2\my-books-v2\obj\Debug\net5.0\my-books-v2.AssemblyInfo.cs
