@@ -1,9 +1,11 @@
 ﻿using my_books_v2.Data.Models;
 using my_books_v2.Data.Paging;
 using my_books_v2.Data.ViewModels;
+using my_books_v2.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace my_books_v2.Data.Services
@@ -44,14 +46,18 @@ namespace my_books_v2.Data.Services
             return allPublishers;
         }  
 
-        public void AddPublisher(PublisherVM publisher)
+        public Publisher AddPublisher(PublisherVM publisher)
         {
+            if (StringStartsWithNumber(publisher.Name)) throw new PublisherNameException("Name starts with number", publisher.Name);
+
             var _publisher = new Publisher()
             {
                 Name = publisher.Name
             };
             _context.Publishers.Add(_publisher);
             _context.SaveChanges();
+
+            return _publisher;
         }
 
         public Publisher GetPublisherById(int id) => _context.Publishers.FirstOrDefault(n => n.Id == id);
@@ -83,5 +89,7 @@ namespace my_books_v2.Data.Services
                 _context.SaveChanges();
             }
         }
+
+        private bool StringStartsWithNumber(string name) => (Regex.IsMatch(name, @"^\d"));
     }
 }
